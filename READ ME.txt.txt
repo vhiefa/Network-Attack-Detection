@@ -1,0 +1,38 @@
+By : Afifatul Mukaroh
+
+This folder contains all functions and data that be used in Training process.
+I built it with Matlab language, so you need to install Matlab if you want to execute it.
+Then you can call the function in Matlab command window.
+I used Artificial Neural Network as Machine Learning Method, and I used backpropagation algorithm for learning.
+
+The Main functions here are :
+1. feature_extraction.m => to extract feature
+=> input : 'Testing.csv' file
+=> output : 'Testing_extractedfeature_result.xlsx' file
+
+=> input : 'Training.csv' file
+=> output : 'Training_extractedfeature_result.xlsx' file
+
+2. feature_normalization.m => to convert extracted data into normalized data (data with range 0-1)
+=> input : 'Testing_extractedfeature_result.xlsx' file
+=> output : 'Testing_normalizedfeature_result.xlsx' file
+
+=> input : 'Training_extractedfeature_result.xlsx' file
+=> output : 'Training_normalizedfeature_result.xlsx' file
+
+3. undersampling.m => to balance the training dataset
+=> input : 'Training_normalizedfeature_result.xlsx' file
+=> output : 'undersampling_dataset.xlsx' file
+
+4. neuralnetwork_bp.m => to start the Training Process
+=> input : 'undersampling_dataset.xlsx', training parameter : learning_rate, maxError and maxEpoch 
+=> output : 'weightV.xlsx' file, 'weightW.xlsx' file, training result: MSE/loss, time, epoch/iteration
+
+other functions like calculate_MSE, convertTag, convertPort, etc are just sub functions of main function.
+
+---------------------------------------------------------------------------------------------------------------
+
+For this training, I used undersampling dataset with learning_rate,  : 0.1, maxError : 0.0001, maxEpoch = 5000
+
+The training stopped because it reached the maxEpoch (which is 5000), error/MSE/loss : 0.0230, time : 149.2036s
+The training result, like the loss/MSE value in every iteration/epoch could be seen in file training_result.txt
